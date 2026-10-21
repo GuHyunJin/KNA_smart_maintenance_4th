@@ -93,3 +93,9 @@ x, y, z = 1, 2, 3
 width, height = 4, 3
 print(width)
 print(height)
+
+
+# 자료형마다 다른 동작
+print(100)
+print(100.0)
+Print("100")
