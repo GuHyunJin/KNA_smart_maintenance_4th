@@ -11,8 +11,25 @@
 # 처음부터 조건이 거짓이면 한 번도 실행되지 않음
 
 # 실습1
-answer = 7
-guess = 0
-while answer != guess:
-    guess = int(input("맞혀보세요: "))
-print("정답입니다!")
+# answer = 7
+# guess = 0
+# while answer != guess:
+#     guess = int(input("맞혀보세요: "))
+# print("정답입니다!")
+
+# break - 반복 도중에 멈추기
+# for i in range(1, 11):
+#     if i == 5:
+#         print(i, "break")
+#         break      #5를 만나면 즉시 종료
+#     print(i)
+
+# for i in range(1, 7):
+#     if i % 2 ==0:
+#         continue
+#     print(i)           #1 3 5
+
+# 실습2
+found = False
+
+
