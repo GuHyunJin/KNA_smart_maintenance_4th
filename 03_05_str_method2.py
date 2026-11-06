@@ -56,3 +56,4 @@ raw = '1,NORMAL,25.3'
 parts = raw.split(',')
 status = parts[1].strip().lower()
 print(status)
+

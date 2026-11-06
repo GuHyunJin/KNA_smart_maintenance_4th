@@ -53,3 +53,4 @@ word = 'PYTHON'
 word = 'SIGNAL'
 # print(word[::2])
 print(word[::-1])
+

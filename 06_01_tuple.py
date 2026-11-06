@@ -61,3 +61,5 @@ for name, value, pos in sensors:
     print(name, "위치:", x, y)
     if x <= 5:
         print(name)
+
+# 
