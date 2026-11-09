@@ -59,10 +59,53 @@ z = (vib_s - np.mean(vib_s)) / np.std(vib_s)
 print(vib_s[np.abs(z) > 2])
 
 # 실습2
-
-
+temp = col(1)
+q1, q3 = np.percentile(temp, [25,75])
+upper = q3 + 1.5 * (q3 - q1)
+print(temp[temp > upper])
+print(int((temp > upper).sum()))
 
 
 
 
 # 실습3
+cyc = col(0)
+temp = col(1)
+
+z = (temp - np.nanmean(temp)) / np.nanstd(temp)
+abnormal = np.abs(z) > 2
+print(cy[abnormal].astype(int))
+print(round(np.abs(z).max(), 2))
+
+
+# 실습4
+cyc = col(0)
+temp = col(1)
+
+high = np.namean(temp) + 3 * np.nanstd(temp)
+print(round(high, 2))
+print(cyc[temp > high].astype(int))
+
+
+# 센서 간 상관관계 - corrcoef
+# - 세기는 절댓값이 정함. +0.99와 -0.99는 세기가 똑같고 방향만 반대
+# - 양수: 한쪽이 오르면 다른 한쪽도 오름 / 음수는 반대
+# - 0에 가까움 - 관계가 없는 상태
+
+temp = np.array([70, 72, 74, 76, 78])
+vib = np.array([2.0, 2.2, 2.5, 2.7, 3.0])
+print(np.round(float(np.corrcoef(temp, vib)[0, 1]), 3))
+
+# 
+print(np.round(np.corrcoef(temp, vib), 3))
+
+data = np.array([[70., 72., 74.], [2.0, 2.2, 2.5]])
+print(np.round(np.mean(data, axis = 1), 2))
+print(np.round(np.mean(data, axis = 0), 2))
+
+# 실습5
+temp = col(1)
+ce = col(3)
+
+corr = np.corrcoef(temp, ce)
+print(round(corr[0, 1], 2))
