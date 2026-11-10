@@ -16,5 +16,10 @@ print(a.shape)
 b = pd.fread_csv(FS, sep=";", encoding="utf-8")
 print(b.shpae)
 print(b.columns.tolist())
+a = pd.read_csv(FS, sep=";", usecols=["측정시각", "오일온도", "모터전류"], nrows=50)
 
 # 실습4
+b = pd.fread_csv(FS, sep=";", encoding="utf-8")
+print(b.shpae)
+print(b.columns.tolist())
+a = pd.read_csv(FS, sep=";", usecols=["측정시각", "오일온도", "모터전류"], nrows=50)
