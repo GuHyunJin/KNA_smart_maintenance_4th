@@ -21,26 +21,37 @@ F_SHOT = 'data/13_diecasting_shot.csv'
 
 
 # 실습1
-print(df["실린더압력"])
-print(df[["형체력", "실린더압력"]])
+# print(df["실린더압력"])
+# print(df[["형체력", "실린더압력"]])
 
 
 # 실습2
-print(df.loc[0, '샷'])
-print(df.loc[0] ['샷'])
+# print(df.loc[0, '샷'])
+# print(df.loc[0] ['샷'])
 
-sorted = df.sort_values('형체력', ascending=False)
-print(sorted.loc[0, '샷'])
-print(sorted.iloc[0] ['샷'])
+# sorted = df.sort_values('형체력', ascending=False)
+# print(sorted.loc[0, '샷'])
+# print(sorted.iloc[0] ['샷'])
 
 # 실습3
-print(list(df.columns))
+# print(list(df.columns))
 
-a = df.loc[0:4, ['실린더압력', '형체력']]
-print(a.shape)
+# a = df.loc[0:4, ['실린더압력', '형체력']]
+# print(a.shape)
 
-b = df.iloc[0:5, [2,6]]
-print(b.shape)
-print(a.equals(b))
+# b = df.iloc[0:5, [2,6]]
+# print(b.shape)
+# print(a.equals(b))
 
 # 실습4
+df = pd.read_csv(F_SHOT)
+print(df.shape)
+print(df.columns.tolist())
+
+a = df.loc[0:9, ['설비ID', '비스킷두께', '품질등급']]
+print(a.shape)
+
+b = df.iloc[-5:]
+print(b.shape)
+print(b['샷'].tolist())
+
