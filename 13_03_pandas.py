@@ -43,3 +43,29 @@ unmatched = m_left[m_left["라인"].isna()]
 print(unmatched["설비ID"].head(1).tolist(), len(unmatched))
 
 
+
+part1 = log.iloc[:100].reset_index(drop=True)
+part2 = log.iloc[100:].reset_index(drop=True)
+print(part1.shape, part2.shape)
+
+stacked = pd.concat([part1, part2])
+print(stacked.shape)
+print(stacked.index[-3:].tolist())
+print(len(stacked.loc[[0]]))
+
+renumbered = pd
+
+
+
+
+
+
+joined = log.merge(master, on='설비ID', how='left')
+with_line = joined[joined['라인'].notna()]
+print(len(with_line))
+
+not_ok = with_line[with_line['품질등급'] != '양품']
+print(len(not_ok))
+
+result = not_ok.sort_values('비스킷두께', ascending=False)
+print(result[['샷', '설비ID', '라인', '비스킷두께', '품질등급']].head(5).to_string(index=Fasle))
